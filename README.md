@@ -10,7 +10,7 @@
 
 [Install the JSNLog JavaScript Logging Package](http://jsnlog.com/). Copy logToServer.js to your site and load it into your pages, such as with a script tag.
 
-To use the new $log and $exceptionHandler, simply import module _logToServer_, like so:
+To use the new $log and $exceptionHandler, simply import module _logToServer_ into your main module, like so:
 ```
 var app = angular.module('mainmodule', ['logToServer']);
 ```
@@ -24,7 +24,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 Set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, when you call $http:
 ```
-$http({ method: '...', url: '...', data: ..., _timeout_: 5000, _warningAfter_: 2000 })
+$http({ method: '...', url: '...', data: ..., <i>timeout</i>: 5000, <i>warningAfter</i>: 2000 })
 .success(function (data, status, headers, config) {
 	...
 })
