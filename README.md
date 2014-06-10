@@ -22,9 +22,9 @@ app.config(['$httpProvider', function($httpProvider) {
 }]);
 ```
 
-Set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, when you call $http:
+When you call $http to send an AJAX message, set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, using _timeout_ and _warningAfter_:
 ```
-$http({ method: '...', url: '...', data: ..., <i>timeout</i>: 5000, <i>warningAfter</i>: 2000 })
+$http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
 .success(function (data, status, headers, config) {
 	...
 })
