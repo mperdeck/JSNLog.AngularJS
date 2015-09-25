@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div>
+            <button>Wait 0</button>
+            Server waits 0 ms - no problem
+        </div>
+        <div>
+            <button>Wait 3000</button>
+            Server waits 3000 ms - JSNLog will log warning for slow response
+        </div>
+        <div>
+            <button>Wait 6000</button>
+            Server waits 6000 ms - AJAX call will time out after 5000 ms
+        </div>
+        <div>
+            <button>Wait -1</button>
+            Server will throw exception
+        </div>
+
+        <div id="spinner"><img src="/Images/ajax-loader.gif" /></div>
+        <div id="message"></div>
+    </div>
+</body>
+</html>
