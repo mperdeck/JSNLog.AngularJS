@@ -4,31 +4,48 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="demoModule">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/logToServer.js"></script>
+    <script src="~/Scripts/demo.js"></script>
+
+    <style>
+        .button-row {
+            padding: 10px;
+        }
+        button {
+            width: 80px;
+        } 
+    </style>
 </head>
-<body>
+<body ng-controller="DemoController as demoController">
     <div>
-        <div>
-            <button>Wait 0</button>
+        <div class="button-row">
+            <button ng-click="demoController.throw()">Throw</button>
+            Throws exception in JavaScript
+        </div>
+        <div class="button-row">
+            <button ng-click="demoController.sendWait(0)">Wait 0</button>
             Server waits 0 ms - no problem
         </div>
-        <div>
-            <button>Wait 3000</button>
+        <div class="button-row">
+            <button ng-click="demoController.sendWait(3000)">Wait 3000</button>
             Server waits 3000 ms - JSNLog will log warning for slow response
         </div>
-        <div>
-            <button>Wait 6000</button>
+        <div class="button-row">
+            <button ng-click="demoController.sendWait(6000)">Wait 6000</button>
             Server waits 6000 ms - AJAX call will time out after 5000 ms
         </div>
-        <div>
-            <button>Wait -1</button>
+        <div class="button-row">
+            <button ng-click="demoController.sendWait(-1)">Wait -1</button>
             Server will throw exception
         </div>
 
-        <div id="spinner"><img src="/Images/ajax-loader.gif" /></div>
+        <div id="spinner" style="display: none;"><img src="/Images/ajax-loader.gif" /></div>
         <div id="message"></div>
     </div>
 </body>
