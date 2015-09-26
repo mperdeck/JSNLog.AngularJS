@@ -143,6 +143,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\logToServer.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

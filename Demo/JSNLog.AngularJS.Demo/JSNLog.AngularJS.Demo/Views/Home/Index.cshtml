@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/logToServer.js"></script>
     <script src="~/Scripts/demo.js"></script>
@@ -26,23 +27,23 @@
     <div>
         <div class="button-row">
             <button ng-click="demoController.throw()">Throw</button>
-            Throws exception in JavaScript
+            Throws client side exception in JavaScript
         </div>
         <div class="button-row">
             <button ng-click="demoController.sendWait(0)">Wait 0</button>
-            Server waits 0 ms - no problem
+            Server doesn't wait before sending response
         </div>
         <div class="button-row">
             <button ng-click="demoController.sendWait(3000)">Wait 3000</button>
-            Server waits 3000 ms - JSNLog will log warning for slow response
+            Server waits 3000 ms before sending response - JSNLog will log warning for slow response
         </div>
         <div class="button-row">
             <button ng-click="demoController.sendWait(6000)">Wait 6000</button>
-            Server waits 6000 ms - AJAX call will time out after 5000 ms
+            Server waits 6000 ms before sending response - AJAX call will time out after 5000 ms
         </div>
         <div class="button-row">
             <button ng-click="demoController.sendWait(-1)">Wait -1</button>
-            Server will throw exception
+            Server throws exception, sends error response
         </div>
 
         <div id="spinner" style="display: none;"><img src="/Images/ajax-loader.gif" /></div>
