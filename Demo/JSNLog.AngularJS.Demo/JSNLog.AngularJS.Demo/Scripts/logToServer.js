@@ -46,7 +46,7 @@ angular.module('logToServer', [])
         },
         'responseError': function (rejection) {
             var errorMessage = "timeout";
-            if (rejection.status != 0) {
+            if (rejection && rejection.status && rejection.data) {
                 errorMessage = rejection.data.ExceptionMessage;
             }
 
