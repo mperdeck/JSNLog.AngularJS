@@ -13,41 +13,41 @@
 2. Copy logToServer.js to your site and load it into your pages, such as with a script tag.
 
 3. To use the new $log and $exceptionHandler, simply import module _logToServer_ into your main module, like so:
-```
-var app = angular.module('mainmodule', ['logToServer']);
-```
+	```
+	var app = angular.module('mainmodule', ['logToServer']);
+	```
 
 4. To use the interceptors, add them to the interceptors array for your application:
-```
-app.config(['$httpProvider', function($httpProvider) {
-    $httpProvider.interceptors.push('logToServerInterceptor');
-}]);
-```
+	```
+	app.config(['$httpProvider', function($httpProvider) {
+		$httpProvider.interceptors.push('logToServerInterceptor');
+	}]);
+	```
 
 5. When you call $http to send an AJAX message, set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, using _timeout_ and _warningAfter_:
-```
-$http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
-.success(function (data, status, headers, config) {
-	...
-})
-.error(function (data, status, headers, config) {
-	...
-});
-```
+	```
+	$http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
+	.success(function (data, status, headers, config) {
+		...
+	})
+	.error(function (data, status, headers, config) {
+		...
+	});
+	```
 
-Or when using the [new type of promises](https://docs.angularjs.org/api/ng/service/$q):
-```
-$http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
-.then(function(response) {
-	...
-})
-.catch(function (rejection) {
-	...
-})
-.finally(function () {
-	...
-});
-```
+	Or when using the [new type of promises](https://docs.angularjs.org/api/ng/service/$q):
+	```
+	$http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
+	.then(function(response) {
+		...
+	})
+	.catch(function (rejection) {
+		...
+	})
+	.finally(function () {
+		...
+	});
+	```
 
 ## Working demo code
 
