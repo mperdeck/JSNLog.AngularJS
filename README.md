@@ -17,7 +17,7 @@ In the Demo directory you'll find the working source code of a very simple demo 
 * The solution file is in Demo/JSNLog.AngularJS.Demo. Open that in Visual Studio. If you don't have Visual Studio, get [Visual Studio Express](https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx) for free.
 * Rebuild the solution. This will import the Nuget packages.
 * Hit F5 to run the demo site. You'll see some buttons to generate events. Hit a few.
-* This demo uses Elmah as the server side logging package. Open http://localhost:<port number>/elmah.axd to see the log messages written to the log. JSNLog supports NLog, Log4Net, Serilog as well.
+* This demo uses Elmah as the server side logging package. Open http://localhost:*portnumber*/elmah.axd to see the log messages written to the log. JSNLog supports NLog, Log4Net, Serilog as well.
 
 ## How to use logToServer.js
 
