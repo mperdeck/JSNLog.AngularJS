@@ -46,18 +46,20 @@ Simply import module _logToServer_ into your main module, like so:
 var app = angular.module('mainmodule', ['logToServer']);
 ```
 
-This logs uncaught exceptions to the server. If you do any debug logging, those messages will go to the server as well.
+This logs uncaught exceptions to the server. If you do any [debug logging](http://jsnlog.com/Documentation/GetStartedLogging), those messages will go to the server as well.
+
+You can configure your client side loggers (setting severity levels, etc.) using a [server side configuration file](http://jsnlog.com/Documentation/WebConfig), or [directly from your JavaScript code](http://jsnlog.com/Documentation/JSNLogJs/Logger/SetOptions). 
 
 ## Log AJAX issues
 
-First add the interceptors to the interceptors array for your application:
+First add the [interceptors](https://docs.angularjs.org/api/ng/service/$http#interceptors) to the interceptors array for your application:
 ```
 app.config(['$httpProvider', function($httpProvider) {
 	$httpProvider.interceptors.push('logToServerInterceptor');
 }]);
 ```
 
-Now when you call $http to send an AJAX message, set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, using _timeout_ and _warningAfter_:
+Now when you call [$http](https://docs.angularjs.org/api/ng/service/$http) to send an AJAX message, set the timeout and the delay after which a warning log message is sent in milliseconds in the config object, using _timeout_ and _warningAfter_:
 ```
 $http({ method: '...', url: '...', data: ..., timeout: 5000, warningAfter: 2000 })
 .success(function (data, status, headers, config) {
