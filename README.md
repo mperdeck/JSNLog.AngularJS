@@ -30,12 +30,12 @@ Note that JSNLog does not include logToServer.js. The two packages have to be in
 
 2. Install logToServer.js:
 
-* Using bower: 
-```
-bower install logToServer.js
-```
+	* Using bower: 
+	```
+	bower install logToServer.js
+	```
 
-* Or copy directly from this repo to for example your Scripts directory ([get the file here](https://raw.githubusercontent.com/mperdeck/JSNLog.AngularJS/master/logToServer.js)).
+	* Or copy directly from this repo to for example your Scripts directory ([get the file here](https://raw.githubusercontent.com/mperdeck/JSNLog.AngularJS/master/logToServer.js)).
 
 3. Make sure that logToServer.js gets loaded into your web pages, for example with a script tag.
 
