@@ -23,7 +23,7 @@ angular.module('logToServer', [])
 .factory('$exceptionHandler', function () {
     return function (exception, cause) {
         JL('Angular').fatalException(cause, exception);
-        throw exception;
+        $log.warn(exception, cause);
     };
 })
 .factory('logToServerInterceptor', ['$q', function ($q) {
