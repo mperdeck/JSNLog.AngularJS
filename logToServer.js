@@ -20,12 +20,12 @@ angular.module('logToServer', [])
         JL('Angular').error(msg);
     }
 })
-.factory('$exceptionHandler', function () {
+.factory('$exceptionHandler', ['$log', function ($log) {
     return function (exception, cause) {
         JL('Angular').fatalException(cause, exception);
         $log.warn(exception, cause);
     };
-})
+}])
 .factory('logToServerInterceptor', ['$q', function ($q) {
 
     var myInterceptor = {
